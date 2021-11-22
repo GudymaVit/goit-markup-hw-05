@@ -84,11 +84,17 @@ img {
   letter-spacing: 0.02em;
   color: var(--title-text-color);
   text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-nav .item {
   position: relative;
 }
 
+.current {
+  color: var(--accent-color);
+}
 .current::after {
   position: absolute;
   content: "";
@@ -96,17 +102,12 @@ img {
   height: 4px;
   bottom: -31px;
   left: 0;
-  color: var(--accent-color);
-  background: #2196f3;
+  background: var(--accent-color);
   border-radius: 2px;
-  opacity: 1;
 }
-
 .header-nav-link:focus,
 .header-nav-link:hover {
   color: var(--accent-color);
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
 }
 .header-contacts-link {
   display: flex;
@@ -117,12 +118,13 @@ img {
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contacts-link:focus,
 .header-contacts-link:hover {
   color: var(--accent-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contacts {
   display: flex;
@@ -172,6 +174,9 @@ img {
   letter-spacing: 0.03em;
   color: #ffffff;
   text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .foot-link {
   display: inline-block;
@@ -181,18 +186,21 @@ img {
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .map-link:focus,
 .map-link:hover {
   color: #2196f3;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .foot-link:focus,
 .foot-link:hover {
   color: #2196f3;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .foot-item {
   display: flex;
@@ -227,16 +235,15 @@ img {
   width: 100%;
   height: 100%;
   background: none;
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-links:hover,
 .footer-social-links:focus {
   background-color: var(--accent-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-links .icon {
   fill: rgba(255, 255, 255, 1);
@@ -352,6 +359,7 @@ img {
   display: flex;
   justify-content: center;
   list-style-type: none;
+  padding-bottom: 94px;
 }
 .directing-list .item + .item {
   margin-left: 30px;
@@ -438,9 +446,7 @@ img {
 .employee-links .point:not(:last-child) {
   margin-right: 10px;
 }
-.employee-icon {
-  fill: rgba(175, 177, 184, 1);
-}
+
 .employee-links .point {
   width: 44px;
   height: 44px;
@@ -453,21 +459,19 @@ img {
   width: 100%;
   height: 100%;
   background: none;
-  background: #ffffff;
+  background-color: #ffffff;
+  fill: rgba(175, 177, 184, 1);
   border-radius: 50%;
+  transition-property: fill, background-color;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .employee-social-links:hover,
 .employee-social-links:focus {
   background-color: var(--accent-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.employee-social-links:hover svg,
-.employee-social-links:focus svg {
   fill: var(--bacground-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 /*--------постояные клиеты--------------*/
 .regular-customers-title {
   margin-bottom: 50px;
@@ -493,24 +497,20 @@ img {
   width: 100%;
   height: 100%;
   border: 1px solid #afb1b8;
+  fill: #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
+  transition-property: fill, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .regular-customers-list .icon {
-  fill: #afb1b8;
   height: inherit;
 }
 .customers-link:hover,
 .customers-link:focus {
   border-color: var(--accent-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.customers-link:hover svg,
-.customers-link:focus svg {
   fill: var(--accent-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .regular-customers-list .item + .item {
   margin-left: 30px;
@@ -538,16 +538,16 @@ img {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
   background-color: var(--secondary-bacground-color);
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn:hover,
 .btn:focus {
   color: var(--bacground-color);
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn {
   cursor: pointer;
@@ -587,34 +587,14 @@ img {
 .project-alements-link {
   display: block;
   text-decoration: none;
+  transition-property: box-shadow;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-alements-link:hover,
 .project-alements-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-.project-alements-link:hover .project-overley-title,
-.project-alements-link:focus .project-overley-title {
-  transform: translateY(0);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.elements .item {
-  padding: 20px;
-  border-right: 1px solid #eeeeee;
-  border-left: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-}
-.project-list .elements:nth-child(3n) {
-  margin-right: 0px;
-}
-.project-list .elements:nth-last-child(-n + 3) {
-  margin-bottom: 0px;
-}
-.project-hover-overley {
-  position: relative;
-  overflow: hidden;
 }
 .project-overley-title > p {
   position: absolute;
@@ -634,11 +614,33 @@ img {
   right: 0;
   width: 100%;
   height: 100%;
-  background: rgba(33, 150, 243, 0.9);
-  transform: translateY(100%);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(33, 150, 243, 0.9);
+  transition-property: transform;
+  transform: translateY(101%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.project-alements-link:hover .project-overley-title,
+.project-alements-link:focus .project-overley-title {
+  transform: translateY(0);
+}
+.elements .item {
+  padding: 20px;
+  border-right: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+.project-list .elements:nth-child(3n) {
+  margin-right: 0px;
+}
+.project-list .elements:nth-last-child(-n + 3) {
+  margin-bottom: 0px;
+}
+.project-hover-overley {
+  position: relative;
+  overflow: hidden;
+}
+
+/*-----------------------модальне вікно-------------------------------*/
 .backdrop {
   position: fixed;
   top: 0;
@@ -647,19 +649,20 @@ img {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: 250ms;
-
+  transition-property: backgraund-color, opacity, visibility;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
-  opacity: 0;
+  opacity: 0.2;
   pointer-events: none;
   visibility: hidden;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden .modal {
-  opacity: 0.2;
+  opacity: 0;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translate(-50%, -50%) scale(2, 0.5);
+  transform: translate(-50%, -50%) scale(1.5, 0.2);
 }
 .modal {
   position: absolute;
@@ -672,9 +675,10 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  opacity: 1;
+  transition-property: opacity, transform;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
 }
 .modal-btn {
   position: absolute;
